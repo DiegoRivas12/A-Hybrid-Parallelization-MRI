@@ -1,0 +1,8 @@
+Usage: singularity [options]
+
+singularity: error: no such option: --nv
+Singularity 1.00 (commit: 2ebc2f3f2059b96885416167363bde2e27ece106)
+Running under Python 3.10.12 (main, Jul 29 2024, 16:56:48) [GCC 11.4.0]
+pygame 2.1.2 (SDL 2.0.20, Python 3.10.12)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+The error-log configured as /home/diego/.local/share/singularity/log/error.log (lazily created when something is logged)
