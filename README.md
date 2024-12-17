@@ -1,6 +1,6 @@
-The pre-processing codes for 3D MRI data are also provided stp by step in my github, please check [this link](https://github.com/liqi814/Structural-Magnetic-Resonance-Imaging-sMRI-Pre-processing-Pipeline) if you need.
+Los códigos de preprocesamiento para datos de resonancia magnética 3D también se proporcionan paso a paso en el github. Si lo necesita, consulte [este enlace ](https://github.com/liqi814/Structural-Magnetic-Resonance-Imaging-sMRI-Pre-processing-Pipeline).
 
-This repo has the receipts for buiding singularity containers, or you can setup the environment by yourself based on the receipts. Please check the folder [singularity_receipt](https://github.com/liqi814/Deep-3D-CNNs-for-MRI-Classification-with-Alzheimer-s-Disease-And-Grad-CAM-Visualization/tree/master/singularity_receipt).
+Este repositorio contiene los recibos para crear contenedores de singularity, o puede configurar el entorno usted mismo en función de los receipts. Consulte la carpeta [singularity_receipt](https://github.com/liqi814/Deep-3D-CNNs-for-MRI-Classification-with-Alzheimer-s-Disease-And-Grad-CAM-Visualization/tree/master/singularity_receipt).
 
 ## Citation
 If you are using this repository, please cite this article
