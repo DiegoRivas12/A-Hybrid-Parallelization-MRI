@@ -1,6 +1,6 @@
-The pre-processing codes for 3D MRI data are also provided stp by step in my github, please check [this link](https://github.com/liqi814/Structural-Magnetic-Resonance-Imaging-sMRI-Pre-processing-Pipeline) if you need.
+Los códigos de preprocesamiento para datos de resonancia magnética 3D también se proporcionan paso a paso en el github. Si lo necesita, consulte [este enlace ](https://github.com/liqi814/Structural-Magnetic-Resonance-Imaging-sMRI-Pre-processing-Pipeline).
 
-This repo has the receipts for buiding singularity containers, or you can setup the environment by yourself based on the receipts. Please check the folder [singularity_receipt](https://github.com/liqi814/Deep-3D-CNNs-for-MRI-Classification-with-Alzheimer-s-Disease-And-Grad-CAM-Visualization/tree/master/singularity_receipt).
+Este repositorio contiene los recibos para crear contenedores de singularity, o puede configurar el entorno usted mismo en función de los receipts. Consulte la carpeta [singularity_receipt](https://github.com/liqi814/Deep-3D-CNNs-for-MRI-Classification-with-Alzheimer-s-Disease-And-Grad-CAM-Visualization/tree/master/singularity_receipt).
 
 ## Citation
 If you are using this repository, please cite this article
@@ -40,12 +40,13 @@ nohup singularity exec --nv classify.img python3.5 scripts/res_3d_pred.py >resne
 Please check the folders [results_vgg](https://github.com/liqi814/Deep-3D-CNNs-for-MRI-Classification-with-Alzheimer-s-Disease-And-Grad-CAM-Visualization/tree/master/results_vgg) and [results_resnet](https://github.com/liqi814/Deep-3D-CNNs-for-MRI-Classification-with-Alzheimer-s-Disease-And-Grad-CAM-Visualization/tree/master/results_resnet) for more details.
 
 
-## 2. Grad-CAM Visualization
+## 2. Visualización Grad-CAM
 
 ### 1.1 Grad-CAM
-After the classification, the models have learned the weights from images. Choose one image in which you would love to view the discriminative regions. In this example, I used *S117504-reg.nii.gz*. And also, you can change to the layer that you want to visualize.
+Después de la clasificación, los modelos han aprendido los pesos a partir de imágenes. Se elige una imagen en la que le gustaría ver las regiones discriminativas. En este ejemplo, se utilizó S117504-reg.nii.gz. Y además, se puede cambiar a la capa que se quiera visualizar.
 
-Usage:
+
+Uso:
 ```bash
 ##Without Singularity
 python3.5  python_script  imgpath prefix
@@ -53,7 +54,7 @@ python3.5  python_script  imgpath prefix
 Singularity  exec --nv classify.img  python3.5 python_script  imgpath  prefix
 ```
 
-For example:
+Por ejemplo:
 ```bash
 qli@gpu001$ singularity exec --nv classify.img python3.5 scripts/vgg_3d_grad_cam.py /home/qli/AlzheimerClassify/5.Resize/S117504-reg.nii.gz S117504
 Using gpu device 0: Tesla P100-PCIE-12GB (CNMeM is disabled, cuDNN 5110)
@@ -71,28 +72,28 @@ test_loss 2.0511419773101807
 ~/mri_classif
 ```
 
-From the examples, the scripts will return some info below:
+A partir de los ejemplos, los scripts devolverán la siguiente información:
 ```bash
 [[ 0.12858798  0.87141204]]
 test_loss 2.0511419773101807
 ```
-The two number inside the double square brackets stands for the possibilities of this image is classified as normal and Alzheimer’s respectively.
+Los dos números dentro de los corchetes dobles representan las posibilidades de que esta imagen se clasifique como normal y Alzheimer respectivamente.
 
-### 1.2 Debugging
+### 1.2 Depuración
 
-If you got a problem like below:
+Si se tiene un problema como el siguiente:
 ```bash
 _tkinter.TclError: no display name and no $DISPLAY environment variable
 ```
 
-Here is the solution:
+Aquí está la solución:
 ```bash
 echo "backend: Agg" > ~/.config/matplotlib/matplotlibrc
 ```
 
 
-### 1.3 Visualization
-After running the Grad-CAM, two *.npz* files (one contains the discriminative info and another one contains the MRI data) will be saved in folder [npz_res](https://github.com/liqi814/Deep-3D-CNNs-for-MRI-Classification-with-Alzheimer-s-Disease-And-Grad-CAM-Visualization/tree/master/npz_res) or [npz_vgg](https://github.com/liqi814/Deep-3D-CNNs-for-MRI-Classification-with-Alzheimer-s-Disease-And-Grad-CAM-Visualization/tree/master/npz_vgg). Scripts in this section do not need to run on the GPU cards. 
+### 1.3 Visualización
+Después de ejecutar Grad-CAM, se guardarán dos archivos .npz (uno que contiene la información discriminativa y otro que contiene los datos de MRI) en la carpeta [npz_res](https://github.com/liqi814/Deep-3D-CNNs-for-MRI-Classification-with-Alzheimer-s-Disease-And-Grad-CAM-Visualization/tree/master/npz_res) o [npz_vgg](https://github.com/liqi814/Deep-3D-CNNs-for-MRI-Classification-with-Alzheimer-s-Disease-And-Grad-CAM-Visualization/tree/master/npz_vgg). No es necesario ejecutar los scripts de esta sección en las tarjetas GPU.
 
 ```bash
 #Usage:
